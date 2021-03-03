@@ -29,7 +29,7 @@ $ yarn install
 
 This projects comes with a Contentful schema ready to be used. Using `yarn setup:contentful`:
 
-![](./docs/setup-contentful.png)
+![](./assets/setup-contentful.png)
 
 This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the schema defined on "schemas/contentful.json".
 

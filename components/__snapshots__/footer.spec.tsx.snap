@@ -15,7 +15,7 @@ exports[`footer snapshots render 1`] = `
           className="navbar-brand mr-2"
         >
           <strong>
-            Demo Blog
+            Dany Dodson
           </strong>
         </span>
         Copyright © 2020 . All rights reserved.

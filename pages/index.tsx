@@ -1,13 +1,14 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import Head from 'next/head'
+import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
 
-import { Post } from '@/core/models';
-import { API } from '@/core/api';
-import config from '@/config';
+import { Post } from '@/core/models'
+import { API } from '@/core/api'
+import config from '@/config'
 
 const Home = ({ posts }: { posts: Post[] }) => {
-  const [first] = posts;
+  const [first] = posts
 
   return (
     <>
@@ -21,7 +22,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
             <div className="pl-4 pr-0 h-100 tofront">
               <div className="row justify-content-between">
                 <div className="col-md-6 pt-6 pb-6 align-self-center">
-                  <h1 className="secondfont mb-3 font-weight-bold">{first.title}</h1>
+                  <h1 className="secondfont mb-3 font-weight-bold">
+                    {first.title}
+                  </h1>
                   <ReactMarkdown source={first.shortBody} className="mb-3" />
                   <Link href={`/post/${first.slug}`}>
                     <a href={`/post/${first.slug}`} className="btn btn-dark">
@@ -34,7 +37,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
                   style={{
                     backgroundImage: `url(${first.heroImage})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
+                    backgroundPosition: 'center center'
                   }}
                 ></div>
               </div>
@@ -51,7 +54,10 @@ const Home = ({ posts }: { posts: Post[] }) => {
             </h5>
             {posts.map((post) => {
               return (
-                <div key={post.slug} className="mb-3 d-flex justify-content-between">
+                <div
+                  key={post.slug}
+                  className="mb-3 d-flex justify-content-between"
+                >
                   <div className="pr-3">
                     <h2 className="mb-1 h4 font-weight-bold">
                       <Link href={`/post/${post.slug}`}>
@@ -70,24 +76,24 @@ const Home = ({ posts }: { posts: Post[] }) => {
                   </div>
                   <img height="120" src={post.heroImage} alt={post.title} />
                 </div>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 export const getStaticProps = async () => {
-  const apiRef = new API();
-  const posts = await apiRef.getPosts();
+  const apiRef = new API()
+  const posts = await apiRef.getPosts()
   return {
     props: {
-      posts,
+      posts
     },
-    revalidate: 1,
-  };
-};
+    revalidate: 1
+  }
+}
 
-export default Home;
+export default Home

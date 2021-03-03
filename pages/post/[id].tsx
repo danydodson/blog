@@ -1,12 +1,13 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import Head from 'next/head'
+import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
 
-import { Post as PostModel } from '@/core/models';
-import config from '@/config';
-import { API } from '@/core/api';
+import { Post as PostModel } from '@/core/models'
+import config from '@/config'
+import { API } from '@/core/api'
 
-import { Subscription } from '@/components';
+import { Subscription } from '@/components'
 
 const Post = ({ post }: { post: PostModel }) => {
   return (
@@ -17,7 +18,10 @@ const Post = ({ post }: { post: PostModel }) => {
         </title>
         <meta property="og:title" content={`${post.title} - ${config.title}`} />
         <meta property="og:site_name" content={config.domain} />
-        <meta property="og:url" content={`https://${config.domain}/post/${post.slug}`} />
+        <meta
+          property="og:url"
+          content={`https://${config.domain}/post/${post.slug}`}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={post.heroImage} />
         <meta property="og:description" content={post.shortBody} />
@@ -35,12 +39,17 @@ const Post = ({ post }: { post: PostModel }) => {
               <div className="col-md-6 pt-6 pb-6 pr-6 align-self-center">
                 <p className="text-uppercase font-weight-bold">
                   <Link href={`/category/${post.category.slug}`}>
-                    <a href={`/category/${post.category.slug}`} className="text-danger">
+                    <a
+                      href={`/category/${post.category.slug}`}
+                      className="text-danger"
+                    >
                       {post.category.name}
                     </a>
                   </Link>
                 </p>
-                <h1 className="display-4 secondfont mb-3 font-weight-bold">{post.title}</h1>
+                <h1 className="display-4 secondfont mb-3 font-weight-bold">
+                  {post.title}
+                </h1>
                 <ReactMarkdown source={post.shortBody} className="mb-3" />
                 <div className="d-flex align-items-center">
                   <img
@@ -48,7 +57,9 @@ const Post = ({ post }: { post: PostModel }) => {
                     src={post.author.photo}
                     width="70"
                     height="70"
-                    style={{ objectFit: 'cover' }}
+                    style={{
+                      objectFit: 'cover'
+                    }}
                     alt={post.author.name}
                   />
                   <small className="ml-2">
@@ -62,7 +73,11 @@ const Post = ({ post }: { post: PostModel }) => {
               <div className="col-md-6 pr-0">
                 <img
                   src={post.heroImage}
-                  style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+                  style={{
+                    objectFit: 'cover',
+                    height: '100%',
+                    width: '100%'
+                  }}
                   alt={post.title}
                 />
               </div>
@@ -85,7 +100,7 @@ const Post = ({ post }: { post: PostModel }) => {
                 <a class="a2a_button_facebook"></a>
                 <a class="a2a_button_twitter"></a>
                 <a class="a2a_button_email"></a>
-              `,
+              `
                   }}
                 ></div>
               </div>
@@ -100,27 +115,27 @@ const Post = ({ post }: { post: PostModel }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 export const getStaticPaths = async () => {
-  const apiRef = new API();
-  const slugs = await apiRef.getPostsPaths();
+  const apiRef = new API()
+  const slugs = await apiRef.getPostsPaths()
   return {
     paths: slugs.map((slug) => `/post/${slug}`),
-    fallback: false,
-  };
-};
+    fallback: false
+  }
+}
 
 export const getStaticProps = async ({ params }) => {
-  const apiRef = new API();
-  const post = await apiRef.getPostBySlug(params.id);
+  const apiRef = new API()
+  const post = await apiRef.getPostBySlug(params.id)
   return {
     props: {
-      post,
+      post
     },
-    revalidate: 1,
-  };
-};
+    revalidate: 1
+  }
+}
 
-export default Post;
+export default Post

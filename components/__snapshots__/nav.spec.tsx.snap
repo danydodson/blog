@@ -15,7 +15,7 @@ exports[`nav snapshots render if categories undefined 1`] = `
         href="/"
       >
         <strong>
-          Demo Blog
+          Dany Dodson
         </strong>
       </a>
     </Link>
@@ -75,7 +75,7 @@ exports[`nav snapshots render with categories 1`] = `
         href="/"
       >
         <strong>
-          Demo Blog
+          Dany Dodson
         </strong>
       </a>
     </Link>
@@ -166,7 +166,7 @@ exports[`nav snapshots render without categories 1`] = `
         href="/"
       >
         <strong>
-          Demo Blog
+          Dany Dodson
         </strong>
       </a>
     </Link>

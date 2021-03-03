@@ -4,7 +4,7 @@ exports[`not-found snapshots render default 1`] = `
 <Fragment>
   <Head>
     <title>
-      Demo Blog - Next.js medium style boilerplate
+      Danys Blog
     </title>
   </Head>
   <div

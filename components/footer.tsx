@@ -1,5 +1,6 @@
-import React from 'react';
-import config from '@/config';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import React from 'react'
+import config from '@/config'
 
 export const Footer = () => (
   <div className="container mt-5">
@@ -22,11 +23,16 @@ export const Footer = () => (
             Next.js Blog Boilerplate
           </a>
           by
-          <a href="https://twitter.com/@gmaxi_" className="font-weight-bold" target="_blank" rel="noreferrer">
+          <a
+            href="https://twitter.com/@gmaxi_"
+            className="font-weight-bold"
+            target="_blank"
+            rel="noreferrer"
+          >
             @gmaxi_
           </a>
         </div>
       </div>
     </footer>
   </div>
-);
+)

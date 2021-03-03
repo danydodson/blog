@@ -1,4 +1,4 @@
-import { NotFound } from '@/components';
+import { NotFound } from '@/components'
 
-const Page404 = () => <NotFound />;
-export default Page404;
+const Page404 = () => <NotFound />
+export default Page404

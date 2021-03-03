@@ -1,2 +1,2 @@
-export * from './contentful.service';
-export * from './typings';
+export * from './contentful.service'
+export * from './typings'

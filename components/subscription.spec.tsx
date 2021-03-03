@@ -1,16 +1,16 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { Subscription } from './subscription';
+import React from 'react'
+import { shallow } from 'enzyme'
+import { Subscription } from './subscription'
 
 describe('subscription', () => {
   describe('snapshots', () => {
-    let component;
+    let component
     beforeEach(() => {
-      component = shallow(<Subscription />);
-    });
+      component = shallow(<Subscription />)
+    })
 
     test('render default', () => {
-      expect(component).toMatchSnapshot();
-    });
-  });
-});
+      expect(component).toMatchSnapshot()
+    })
+  })
+})

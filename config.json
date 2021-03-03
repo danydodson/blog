@@ -1,7 +1,7 @@
 {
-  "name": "Demo Blog",
-  "title": "Demo Blog - Next.js medium style boilerplate",
-  "domain": "",
+  "name": "Dany Dodson",
+  "title": "Danys Blog",
+  "domain": "https://blog-7cqn30mku-danydodson.vercel.app",
   "googleAnalytics": "UA-133302217-1",
   "subscription": {
     "enabled": true,

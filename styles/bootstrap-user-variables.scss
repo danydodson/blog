@@ -1,4 +1,3 @@
-
 // --------------------------------------- !!
 // Overwrite specific bootstrap variables by uncommenting the variable and provide your own value
 // --------------------------------------- !!
@@ -13,7 +12,7 @@
 // Color system
 //
 
-$white:    #fff !default;
+$white   : #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -23,99 +22,87 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$black:    #000 !default;
+$black   : #000 !default;
 
 
 $grays: () !default;
 // // stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(
-(
-"100": $gray-100,
-"200": $gray-200,
-"300": $gray-300,
-"400": $gray-400,
-"500": $gray-500,
-"600": $gray-600,
-"700": $gray-700,
-"800": $gray-800,
-"900": $gray-900
-),
- $grays
-);
+$grays: map-merge(("100": $gray-100,
+      "200": $gray-200,
+      "300": $gray-300,
+      "400": $gray-400,
+      "500": $gray-500,
+      "600": $gray-600,
+      "700": $gray-700,
+      "800": $gray-800,
+      "900": $gray-900),
+   $grays);
 
 
-$blue:    #7832e2 !default;
-$indigo:  #502c6c !default;
-$purple:  #ad6edd !default;
-$pink:    #ff0266 !default;
-$red:     #ea2f65 !default;
-$orange:  #fbb500 !default;
-$yellow:  #ffde03 !default;
-$green:   #03a87c !default;
-$teal:    #09ebaf !default;
-$cyan:    #35bdff !default;
-$lila:    #b2a5e4 !default;
-$salmon:  #ff977a !default;
+$blue     : #7832e2 !default;
+$indigo   : #502c6c !default;
+$purple   : #ad6edd !default;
+$pink     : #ff0266 !default;
+$red      : #ea2f65 !default;
+$orange   : #fbb500 !default;
+$yellow   : #ffde03 !default;
+$green    : #03a87c !default;
+$teal     : #09ebaf !default;
+$cyan     : #35bdff !default;
+$lila     : #b2a5e4 !default;
+$salmon   : #ff977a !default;
 $lightblue: #e8f3ec !default;
 
 
 $colors: () !default;
 // // stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
-(
-"blue":       $blue,
-"indigo":     $indigo,
-"purple":     $purple,
-"pink":       $pink,
-"red":        $red,
-"orange":     $orange,
-"yellow":     $yellow,
-"green":      $green,
-"teal":       $teal,
-"cyan":       $cyan,
-"white":      $white,
-"gray":       $gray-600,
-"gray-dark":  $gray-800,
-"light-blue": $lightblue
-),
-$colors
-);
+$colors: map-merge(("blue": $blue,
+      "indigo": $indigo,
+      "purple": $purple,
+      "pink": $pink,
+      "red": $red,
+      "orange": $orange,
+      "yellow": $yellow,
+      "green": $green,
+      "teal": $teal,
+      "cyan": $cyan,
+      "white": $white,
+      "gray": $gray-600,
+      "gray-dark": $gray-800,
+      "light-blue": $lightblue),
+   $colors);
 
-$primary:       $green !default;
-$secondary:     $blue !default;
-$success:       $green !default;
-$info:          $teal !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
-$white:         $white !default;
-$lightblue:     $lightblue !default;
+$primary  : $green !default;
+$secondary: $blue !default;
+$success  : $green !default;
+$info     : $teal !default;
+$warning  : $yellow !default;
+$danger   : $red !default;
+$light    : $gray-100 !default;
+$dark     : $gray-900 !default;
+$white    : $white !default;
+$lightblue: $lightblue !default;
 
 
- $theme-colors: () !default;
+$theme-colors: () !default;
 // // stylelint-disable-next-line scss/dollar-variable-default
- $theme-colors: map-merge(
-   (
-     "primary":    $primary,
-     "secondary":  $secondary,
-     "success":    $success,
-     "info":       $info,
-     "warning":    $warning,
-     "danger":     $danger,
-     "light":      $light,
-     "dark":       $dark,
-     "white":      $white,
-     "purple":     $purple,
-     "salmon":     $salmon,
-     "cyan":       $cyan,
-     "gray":       $gray-400,
-     "indigo":     $indigo,
-     "orange":     $orange,
-     "lightblue":  $lightblue
-   ),
-   $theme-colors
- );
+$theme-colors: map-merge(("primary": $primary,
+      "secondary": $secondary,
+      "success": $success,
+      "info": $info,
+      "warning": $warning,
+      "danger": $danger,
+      "light": $light,
+      "dark": $dark,
+      "white": $white,
+      "purple": $purple,
+      "salmon": $salmon,
+      "cyan": $cyan,
+      "gray": $gray-400,
+      "indigo": $indigo,
+      "orange": $orange,
+      "lightblue": $lightblue),
+   $theme-colors);
 //
 // // Set a specific jump point for requesting color jumps
 // $theme-color-interval:      8% !default;
@@ -147,21 +134,18 @@ $lightblue:     $lightblue !default;
 // // variables. Mostly focused on spacing.
 // // You can add more entries to the $spacers map, should you need more variation.
 //
- $spacer: 1rem !default;
+$spacer : 1rem !default;
 $spacers: () !default;
 // // stylelint-disable-next-line scss/dollar-variable-default
- $spacers: map-merge(
- (
- 0: 0,
-1: ($spacer * .25),
-2: ($spacer * .5),
-3: $spacer,
-4: ($spacer * 1.5),
-5: ($spacer * 3),
-6: ($spacer * 5),
-),
- $spacers
-);
+$spacers: map-merge((0: 0,
+      1: ($spacer * .25),
+      2: ($spacer * .5),
+      3: $spacer,
+      4: ($spacer * 1.5),
+      5: ($spacer * 3),
+      6: ($spacer * 5),
+   ),
+   $spacers);
 //
 // // This variable affects the `.h-*` and `.w-*` classes.
 // $sizes: () !default;
@@ -246,7 +230,7 @@ $spacers: () !default;
 // $line-height-sm:              1.5 !default;
 //
 // $border-width:                1px !default;
-   $border-color:                $lightblue !default;
+$border-color             : $lightblue !default;
 //
 // $border-radius:               .25rem !default;
 // $border-radius-lg:            .3rem !default;
@@ -254,7 +238,7 @@ $spacers: () !default;
 //
 // $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 // $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
-   $box-shadow-lg:               0 10px 25px 0 rgba($black,.3) !default;
+$box-shadow-lg            : 0 10px 25px 0 rgba($black, .3) !default;
 //
 // $component-active-color:      $white !default;
 // $component-active-bg:         theme-color("primary") !default;
@@ -271,23 +255,29 @@ $spacers: () !default;
 // // Font, line-height, and color for body text, headings, and more.
 //
 // // stylelint-disable value-keyword-case
-   $font-family-sans-serif:      "Source Sans Pro", "Segoe UI", "Helvetica Neue", "Arial" !default;
-   $font-secondary:              "Playfair Display", "Segoe UI", "Helvetica Neue", "Arial" !default;
+$font-family-sans-serif   : "Source Sans Pro",
+"Segoe UI",
+"Helvetica Neue",
+"Arial" !default;
+$font-secondary: "Playfair Display",
+"Segoe UI",
+"Helvetica Neue",
+"Arial" !default;
 // $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // $font-family-base:            $font-family-sans-serif !default;
 // // stylelint-enable value-keyword-case
 //
-   $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-   $font-size-lg:                ($font-size-base * 1.15) !default;
-   $font-size-smaller:           ($font-size-base * 1) !default;
+$font-size-base               : 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg                 : ($font-size-base * 1.15) !default;
+$font-size-smaller            : ($font-size-base * 1) !default;
 // $font-size-sm:                ($font-size-base * .875) !default;
 //
-   $font-weight-light:           300 !default;
-   $font-weight-normal:          400 !default;
+$font-weight-light            : 300 !default;
+$font-weight-normal           : 400 !default;
 // $font-weight-bold:            700 !default;
 //
-   $font-weight-base:            $font-weight-normal !default;
-   $line-height-base:            1.6 !default;
+$font-weight-base             : $font-weight-normal !default;
+$line-height-base             : 1.6 !default;
 //
 // $h1-font-size:                $font-size-base * 2.5 !default;
 // $h2-font-size:                $font-size-base * 2 !default;
@@ -297,9 +287,9 @@ $spacers: () !default;
 // $h6-font-size:                $font-size-base !default;
 //
 // $headings-margin-bottom:      ($spacer / 2) !default;
-   $headings-font-family:        inherit !default;
-   $headings-font-weight:        500 !default;
-   $headings-line-height:        1.2 !default;
+$headings-font-family         : inherit !default;
+$headings-font-weight         : 500 !default;
+$headings-line-height         : 1.2 !default;
 // $headings-color:              inherit !default;
 //
 // $display1-size:               6rem !default;
@@ -316,7 +306,7 @@ $spacers: () !default;
 // $lead-font-size:              ($font-size-base * 1.25) !default;
 // $lead-font-weight:            300 !default;
 //
-   $small-font-size:             85% !default;
+$small-font-size              : 85% !default;
 //
 // $text-muted:                  $gray-600 !default;
 //
@@ -372,8 +362,8 @@ $spacers: () !default;
 // //
 // // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 //
-   $input-btn-padding-y:         .45rem !default;
-   $input-btn-padding-x:         1.2rem !default;
+$input-btn-padding-y          : .45rem !default;
+$input-btn-padding-x          : 1.2rem !default;
 // $input-btn-line-height:       $line-height-base !default;
 //
 // $input-btn-focus-width:       .2rem !default;
@@ -381,11 +371,11 @@ $spacers: () !default;
 // $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 //
 // $input-btn-padding-y-sm:      .25rem !default;
-   $input-btn-padding-x-sm:       1rem !default;
+$input-btn-padding-x-sm       : 1rem !default;
 // $input-btn-line-height-sm:    $line-height-sm !default;
 //
-   $input-btn-padding-y-lg:      .65rem !default;
-   $input-btn-padding-x-lg:      2rem !default;
+$input-btn-padding-y-lg       : .65rem !default;
+$input-btn-padding-x-lg       : 2rem !default;
 // $input-btn-line-height-lg:    $line-height-lg !default;
 //
 // $input-btn-border-width:      $border-width !default;
@@ -625,7 +615,7 @@ $spacers: () !default;
 //
 // $dropdown-link-disabled-color:      $gray-600 !default;
 //
-   $dropdown-item-padding-y:           .45rem !default;
+$dropdown-item-padding-y             : .45rem !default;
 // $dropdown-item-padding-x:           1.5rem !default;
 //
 // $dropdown-header-color:             $gray-600 !default;
@@ -646,7 +636,7 @@ $spacers: () !default;
 //
 // // Navs
 //
-   $nav-link-padding-y:                .8rem !default;
+$nav-link-padding-y                  : .8rem !default;
 // $nav-link-padding-x:                1rem !default;
 // $nav-link-disabled-color:           $gray-600 !default;
 //
@@ -670,7 +660,7 @@ $spacers: () !default;
 // $navbar-padding-y:                  ($spacer / 2) !default;
 // $navbar-padding-x:                  $spacer !default;
 //
-   $navbar-nav-link-padding-x:         .9rem !default;
+$navbar-nav-link-padding-x           : .9rem !default;
 //
 // $navbar-brand-font-size:            $font-size-lg !default;
 // // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
@@ -683,8 +673,8 @@ $spacers: () !default;
 // $navbar-toggler-font-size:          $font-size-lg !default;
 // $navbar-toggler-border-radius:      $btn-border-radius !default;
 //
-   $navbar-dark-color:                 rgba($white, .85) !default;
-   $navbar-dark-hover-color:           rgba($white, 1) !default;
+$navbar-dark-color                   : rgba($white, .85) !default;
+$navbar-dark-hover-color             : rgba($white, 1) !default;
 // $navbar-dark-active-color:          $white !default;
 // $navbar-dark-disabled-color:        rgba($white, .25) !default;
 // $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
@@ -699,8 +689,8 @@ $spacers: () !default;
 //
 // // Pagination
 //
-   $pagination-padding-y:              .75rem !default;
-   $pagination-padding-x:              1rem !default;
+$pagination-padding-y                : .75rem !default;
+$pagination-padding-x                : 1rem !default;
 // $pagination-padding-y-sm:           .25rem !default;
 // $pagination-padding-x-sm:           .5rem !default;
 // $pagination-padding-y-lg:           .75rem !default;
@@ -740,7 +730,7 @@ $spacers: () !default;
 // $card-spacer-x:                     1.25rem !default;
 // $card-border-width:                 $border-width !default;
 // $card-border-radius:                $border-radius !default;
-   $card-border-color:                 $lightblue !default;
+$card-border-color                   : $lightblue !default;
 // $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 // $card-cap-bg:                       rgba($black, .03) !default;
 // $card-bg:                           $white !default;
@@ -800,7 +790,7 @@ $spacers: () !default;
 //
 // // Badges
 //
-   $badge-font-size:                   84% !default;
+$badge-font-size                     : 84% !default;
 // $badge-font-weight:                 $font-weight-bold !default;
 // $badge-padding-y:                   .25em !default;
 // $badge-padding-x:                   .4em !default;
@@ -855,9 +845,9 @@ $spacers: () !default;
 // $alert-link-font-weight:            $font-weight-bold !default;
 // $alert-border-width:                $border-width !default;
 //
-$alert-bg-level:                    0 !default;
-$alert-border-level:                0 !default;
-$alert-color-level:                 0 !default;
+$alert-bg-level                      : 0 !default;
+$alert-border-level                  : 0 !default;
+$alert-color-level                   : 0 !default;
 //
 //
 // // Progress bars
@@ -984,4 +974,4 @@ $alert-color-level:                 0 !default;
 
 // Buttons
 
-$round-radius:          30px !default;
+$round-radius: 30px !default;

@@ -1,20 +1,21 @@
-import Head from 'next/head';
-import Link from 'next/link';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import Head from 'next/head'
+import Link from 'next/link'
 
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown'
 
-import { API } from '@/core/api';
-import config from '@/config';
-import { Post, Category as CategoryModel } from '@/core/models';
-import { Subscription } from '@/components';
+import { API } from '@/core/api'
+import config from '@/config'
+import { Post, Category as CategoryModel } from '@/core/models'
+import { Subscription } from '@/components'
 
 type Props = {
-  posts?: Post[];
-  category?: CategoryModel;
-};
+  posts?: Post[]
+  category?: CategoryModel
+}
 
 const Category = ({ posts, category }: Props) => {
-  const [first] = posts;
+  const [first] = posts
 
   return (
     <>
@@ -31,7 +32,11 @@ const Category = ({ posts, category }: Props) => {
             {first && (
               <div className="card border-0 mb-5 box-shadow">
                 <div
-                  style={{ backgroundImage: `url(${first.heroImage})`, backgroundSize: 'cover', height: '350px' }}
+                  style={{
+                    backgroundImage: `url(${first.heroImage})`,
+                    backgroundSize: 'cover',
+                    height: '350px'
+                  }}
                 ></div>
                 <div className="card-body px-0 pb-0 d-flex flex-column align-items-start">
                   <h2 className="h2 font-weight-bold">
@@ -41,7 +46,10 @@ const Category = ({ posts, category }: Props) => {
                       </a>
                     </Link>
                   </h2>
-                  <ReactMarkdown source={first.shortBody} className="card-text" />
+                  <ReactMarkdown
+                    source={first.shortBody}
+                    className="card-text"
+                  />
                   <div>
                     <small className="d-block text-muted">
                       {first.author.name} in {first.category.name}
@@ -58,7 +66,10 @@ const Category = ({ posts, category }: Props) => {
             </h5>
             {posts.map((post: Post) => {
               return (
-                <div key={post.slug} className="mb-3 d-flex justify-content-between">
+                <div
+                  key={post.slug}
+                  className="mb-3 d-flex justify-content-between"
+                >
                   <div className="pr-3">
                     <h2 className="mb-1 h4 font-weight-bold">
                       <Link href={`/post/${post.slug}`}>
@@ -77,7 +88,7 @@ const Category = ({ posts, category }: Props) => {
                   </div>
                   <img height="120" src={post.heroImage} alt={post.title} />
                 </div>
-              );
+              )
             })}
           </div>
         </div>
@@ -89,29 +100,29 @@ const Category = ({ posts, category }: Props) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
 export const getStaticPaths = async () => {
-  const apiRef = new API();
-  const slugs = await apiRef.getCategoriesPaths();
+  const apiRef = new API()
+  const slugs = await apiRef.getCategoriesPaths()
   return {
     paths: slugs.map((slug) => `/category/${slug}`),
-    fallback: false,
-  };
-};
+    fallback: false
+  }
+}
 
 export const getStaticProps = async ({ params }) => {
-  const apiRef = new API();
-  const category = await apiRef.getCategory(params.id);
-  const posts = await apiRef.getPostsByCategory(params.id);
+  const apiRef = new API()
+  const category = await apiRef.getCategory(params.id)
+  const posts = await apiRef.getPostsByCategory(params.id)
   return {
     props: {
       posts,
-      category,
+      category
     },
-    revalidate: 1,
-  };
-};
+    revalidate: 1
+  }
+}
 
-export default Category;
+export default Category

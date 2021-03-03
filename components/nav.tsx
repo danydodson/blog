@@ -1,11 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
-import config from '@/config';
-import { Category } from '@/core/models';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import React from 'react'
+import Link from 'next/link'
+import config from '@/config'
+import { Category } from '@/core/models'
 
 type Props = {
-  categories: Category[];
-};
+  categories: Category[]
+}
 
 export const Nav = ({ categories }: Props) => (
   <nav className="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -38,7 +39,7 @@ export const Nav = ({ categories }: Props) => (
                     </a>
                   </Link>
                 </li>
-              );
+              )
             })}
         </ul>
         <ul className="navbar-nav ml-auto d-flex align-items-center">
@@ -56,4 +57,4 @@ export const Nav = ({ categories }: Props) => (
       </div>
     </div>
   </nav>
-);
+)

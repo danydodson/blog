@@ -1,42 +1,46 @@
-import React, { useState } from 'react';
-import config from '@/config';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import React, { useState } from 'react'
+import config from '@/config'
 
 interface AlertMeta {
-  class: string;
-  message: string;
+  class: string
+  message: string
 }
 
 export const Subscription = () => {
-  const [email, setEmail] = useState<string>('');
-  const [blocked, setBlocked] = useState<boolean>(false);
-  const [alert, setAlert] = useState<AlertMeta>();
+  const [email, setEmail] = useState<string>('')
+  const [blocked, setBlocked] = useState<boolean>(false)
+  const [alert, setAlert] = useState<AlertMeta>()
 
   const subscribe = async () => {
-    setBlocked(true);
-    setAlert(null);
+    setBlocked(true)
+    setAlert(null)
     try {
       const data = await fetch(config.subscription.url, {
         method: 'POST',
-        body: JSON.stringify({ email, date: new Date() }),
+        body: JSON.stringify({
+          email,
+          date: new Date()
+        }),
         headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const json = await data.json();
+          'Content-Type': 'application/json'
+        }
+      })
+      const json = await data.json()
       if (json) {
         setAlert({
           class: 'success',
-          message: config.subscription.success,
-        });
+          message: config.subscription.success
+        })
       }
     } catch (e) {
       setAlert({
         class: 'danger',
-        message: config.subscription.error,
-      });
-      setBlocked(false);
+        message: config.subscription.error
+      })
+      setBlocked(false)
     }
-  };
+  }
 
   return (
     <div className="border p-5 bg-lightblue">
@@ -64,7 +68,12 @@ export const Subscription = () => {
               />
             </div>
             <div className="col-md-12 mt-2">
-              <button type="submit" className="btn btn-success btn-block" onClick={subscribe} disabled={blocked}>
+              <button
+                type="submit"
+                className="btn btn-success btn-block"
+                onClick={subscribe}
+                disabled={blocked}
+              >
                 Subscribe
               </button>
             </div>
@@ -72,5 +81,5 @@ export const Subscription = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

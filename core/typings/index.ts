@@ -1,3 +1,3 @@
 export enum Integrations {
-  CONTENTFUL = 'contentful',
+  CONTENTFUL = 'contentful'
 }
