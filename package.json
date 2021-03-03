@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start -p 3000",
     "setup": "node bin/setup/contentful.js",
-    "tests": "jest",
-    "tests:watch": "jest --watch",
-    "tests:coverage": "jest --coverage",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "eslint '{pages,components,config,core}/**/*.{js,ts,tsx}' --quiet",
     "lint:fix": "yarn lint --fix"
   },
